@@ -6,7 +6,7 @@
 	
 	define('DBHOST', 'localhost');
 	define('DBUSER', 'root');
-	define('DBPASS', 'root');
+	define('DBPASS', 'angel');
 	define('DBNAME', 'dbtest');
 	
 	$conn = mysql_connect(DBHOST,DBUSER,DBPASS);
