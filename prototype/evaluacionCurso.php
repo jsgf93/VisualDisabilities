@@ -13,287 +13,197 @@ $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
 ?>
     <!DOCTYPE html>
-    <html>
+    <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Bienvenido - <?php echo $userRow['userEmail']; ?></title>
+        <title>Bienvenido - Angel</title>
+        <!--<?php echo $userRow['userEmail']; ?>-->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
         <link rel="stylesheet" href="style.css" type="text/css" />
+        <script src="assets/jquery-1.11.3-jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+
     </head>
     <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container" >
             <div class="navbar-header">
-                <a class="navbar-brand" href="home.php">Menu</a>
+                <a class="navbar-brand" href="home.php" tabindex="0">Menu</a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
+            <div id="navbar" class="navbar-collapse collapse" >
                 <ul class="nav navbar-nav">
-                    <li ><a href="curso.php">Primera lección</a></li>
-                    <li><a href="evaluacionCurso.php">Evualuación de la lección</a></li>
+                    <li ><a href="curso.php" tabindex="0">Primera lección</a></li>
+                    <li><a href="evaluacionCurso.php" tabindex="0">Evualuación de la lección</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
                             <span class="glyphicon glyphicon-user"></span>&nbsp;Bienvenido :<?php echo $userRow['userEmail']; ?>&nbsp;<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Cerrar Sesión</a></li>
+                            <li><a href="logout.php?logout" tabindex="0"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Cerrar Sesión</a></li>
                         </ul>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </nav>
-
-
-    <div id="wrapper">
-
+    <div id="wapper">
         <div class="container">
             <div class="page-header">
-                <h1 class="text-center"><strong>Evaluacion de la primera lección</strong></h1>
-
+                <br>
+                <h1 class="text-center" tabindex="0"><strong>Evaluacion de la primera lección</strong></h1>
             </div>
             <form>
 
+                <!--primera pregunta-->
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-12" tabindex="0">Primera pregunta</legend>
+                    <form>
+                    <div class="col-sm-12">
+
+                        <p tabindex="0">El verbo to be sirve para describir</p>
+                        <div class="form-check" tabindex="0">
+                            <label class="form-check-label" >
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="rc1" >
+                                 Acciones
+                            </label>
+                        </div>
+                        <div class="form-check" tabindex="0">
+                            <label class="form-check-label"  >
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="ri1">
+                                Estados de un objeto
+                            </label>
+                        </div>
+                        <div class="form-check" tabindex="0">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="ri2" >
+                                Ninguna
+                            </label>
+                        </div>
+                    </div>
+                    </form>
+                </fieldset>
 
                 <fieldset class="form-group row">
-
-                    <legend class="col-form-legend col-sm-12">La evaluación consta de diez preguntas, seleccione la que crea correcta:</legend>
+                    <legend class="col-form-legend col-sm-12" tabindex="0">Segunda pregunta</legend>
+                    <form>
                     <div class="col-sm-12">
-                        <h3>Primera pregunta</h3>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                                 lal
-                            </label>
-                        </div>
 
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                Option two can be something else and selecting it will deselect option one
+                        <p tabindex="0">Estructura de una pregunta con el verbo to be</p>
+                        <div class="form-check" tabindex="0">
+                            <label class="form-check-label" >
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="rc2" >
+                                To be + Sujeto (pronombre personal) + oración
                             </label>
                         </div>
-                        <div class="form-check disabled">
+                        <div class="form-check" tabindex="0">
+                            <label class="form-check-label"  >
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="ri12">
+                                Sujeto (pronombre personal) + oración + to be
+                            </label>
+                        </div>
+                        <div class="form-check" tabindex="0">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                Option three is disabled
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="ri22" >
+                                Oración + to be + Sujeto (pronombre personal)
                             </label>
                         </div>
                     </div>
-                    <div class="col-sm-12">
-                        <h3>Segunda pregunta</h3>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                                lal
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                Option two can be something else and selecting it will deselect option one
-                            </label>
-                        </div>
-                        <div class="form-check disabled">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                Option three is disabled
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <h3>Tercera pregunta</h3>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                                lal
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                Option two can be something else and selecting it will deselect option one
-                            </label>
-                        </div>
-                        <div class="form-check disabled">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                Option three is disabled
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <h3>Cuarta pregunta</h3>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                                lal
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                Option two can be something else and selecting it will deselect option one
-                            </label>
-                        </div>
-                        <div class="form-check disabled">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                Option three is disabled
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <h3>Quinta pregunta</h3>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                                lal
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                Option two can be something else and selecting it will deselect option one
-                            </label>
-                        </div>
-                        <div class="form-check disabled">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                Option three is disabled
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <h3>Sexta pregunta</h3>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                                lal
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                Option two can be something else and selecting it will deselect option one
-                            </label>
-                        </div>
-                        <div class="form-check disabled">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                Option three is disabled
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <h3>Septima pregunta</h3>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                                lal
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                Option two can be something else and selecting it will deselect option one
-                            </label>
-                        </div>
-                        <div class="form-check disabled">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                Option three is disabled
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <h3>Octava pregunta</h3>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                                lal
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                Option two can be something else and selecting it will deselect option one
-                            </label>
-                        </div>
-                        <div class="form-check disabled">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                Option three is disabled
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <h3>Novena pregunta</h3>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                                lal
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                Option two can be something else and selecting it will deselect option one
-                            </label>
-                        </div>
-                        <div class="form-check disabled">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                Option three is disabled
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <h3>Decima pregunta</h3>
-                        <p><strong>El pronombre IT, va seguido del verbo to be:</strong></p>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                                am
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                is
-                            </label>
-                        </div>
-                        <div class="form-check disabled">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                                are
-                            </label>
-                        </div>
-                    </div>
+                    </form>
                 </fieldset>
+
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-12" tabindex="0">Tercera pregunta</legend>
+                    <form>
+                        <div class="col-sm-12">
+                            <p tabindex="0">Seleccione la oración que usted crea que esta correcta</p>
+                            <div class="form-check" tabindex="0">
+                                <label class="form-check-label" >
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="rc3" >
+                                    I am a student
+                                </label>
+                            </div>
+                            <div class="form-check" tabindex="0">
+                                <label class="form-check-label"  >
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="ri13">
+                                    I a am student
+                                </label>
+                            </div>
+                            <div class="form-check" tabindex="0">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="ri23" >
+                                    I student am a
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-12" tabindex="0">Cuarta pregunta</legend>
+                    <form>
+                        <div class="col-sm-12">
+                            <p tabindex="0">Cual es la estructura de una oración negativa con el verbo to be </p>
+                            <div class="form-check" tabindex="0">
+                                <label class="form-check-label" >
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="rc4" >
+                                    To be + not + Sujeto (pronombre personal) + oración
+                                </label>
+                            </div>
+                            <div class="form-check" tabindex="0">
+                                <label class="form-check-label"  >
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="ri14">
+                                    Sujeto (pronombre personal)+ To be + not + oración
+                                </label>
+                            </div>
+                            <div class="form-check" tabindex="0">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="ri24" >
+                                    Oración + not + to be + sujeto (pronombre personal)
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+
+                <fieldset class="form-group row">
+                    <legend class="col-form-legend col-sm-12" tabindex="0">Quinta pregunta</legend>
+                    <form>
+                        <div class="col-sm-12">
+                            <p tabindex="0">Seleccione la oración que usted crea que esta correctamente escrita</p>
+                            <div class="form-check" tabindex="0">
+                                <label class="form-check-label" >
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="rc5">
+                                    I not am a student
+                                </label>
+                            </div>
+                            <div class="form-check" tabindex="0">
+                                <label class="form-check-label"  >
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="ri15">
+                                    I a am not a student
+                                </label>
+                            </div>
+                            <div class="form-check" tabindex="0">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="ri25" >
+                                    I am not a student
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+
 
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary">Finalizar Evaluación</button>
+                        <button type="submit" class="btn btn-primary" tabindex="0">Finalizar Evaluación</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 
-    <script src="assets/jquery-1.11.3-jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
 
     </body>
     </html>
