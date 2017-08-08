@@ -25,7 +25,10 @@ $userRow=mysql_fetch_array($res);
 
     </head>
     <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div >
+        <img id="banner" src="assets/img/inglesFuturo.jpg" alt="Hombre y mujer ejecutivos a lado de un texto que dice: El inglés te conecta con el mundo" height="250">
+    </div>
+    <nav class="navbar navbar-light bg-faded">
         <div class="container" >
             <div class="navbar-header">
                 <a class="navbar-brand" href="home.php" tabindex="0">Menu</a>
