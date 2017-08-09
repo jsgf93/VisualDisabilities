@@ -22,23 +22,27 @@
 		$pass = trim($_POST['pass']);
 		$pass = strip_tags($pass);
 		$pass = htmlspecialchars($pass);
+        
+        $dis = trim($_POST['dis']);
+		$dis = strip_tags($dis);
+		$dis = htmlspecialchars($dis);
 		
 		// basic name validation
 		if (empty($name)) {
 			$error = true;
-			$nameError = "Please enter your full name.";
+			$nameError = "Por favor ingrese su nombre.";
 		} else if (strlen($name) < 3) {
 			$error = true;
-			$nameError = "Name must have atleat 3 characters.";
+			$nameError = "Su nombre debe tener al menos 3 caracteres.";
 		} else if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
 			$error = true;
-			$nameError = "Name must contain alphabets and space.";
+			$nameError = "Su nombre no debe contener números.";
 		}
 		
 		//basic email validation
 		if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
 			$error = true;
-			$emailError = "Please enter valid email address.";
+			$emailError = "Por favor ingrese un correo válido.";
 		} else {
 			// check email exist or not
 			$query = "SELECT userEmail FROM users WHERE userEmail='$email'";
@@ -46,36 +50,50 @@
 			$count = mysql_num_rows($result);
 			if($count!=0){
 				$error = true;
-				$emailError = "Provided Email is already in use.";
+				$emailError = "El correo electrónico ingresado ya está en uso.";
 			}
 		}
 		// password validation
 		if (empty($pass)){
 			$error = true;
-			$passError = "Please enter password.";
+			$passError = "Por favor ingrese su contraseña.";
 		} else if(strlen($pass) < 6) {
 			$error = true;
-			$passError = "Password must have atleast 6 characters.";
+			$passError = "Su contraseña debe tener al menos 6 caracteres.";
 		}
 		
 		// password encrypt using SHA256();
 		$password = hash('sha256', $pass);
+        
+        
+        // basic disability validation
+		if (empty($dis)) {
+			$error = true;
+			$disError = "Por favor ingrese su discapacidad.";
+		} else if (strlen($dis) < 3) {
+			$error = true;
+			$disError = "El nombre de su discapacidad no es correcto.";
+		} else if (!preg_match("/^[a-zA-Z ]+$/",$dis)) {
+			$error = true;
+			$disError = "No se permiten números en este campo";
+		}
 		
 		// if there's no error, continue to signup
 		if( !$error ) {
 			
-			$query = "INSERT INTO users(userName,userEmail,userPass) VALUES('$name','$email','$password')";
+			$query = "INSERT INTO users(userName,userEmail,userPass,userDis) VALUES('$name','$email','$password','$dis')";
 			$res = mysql_query($query);
 				
 			if ($res) {
 				$errTyp = "success";
-				$errMSG = "Successfully registered, you may login now";
+				$errMSG = "Se ha registrado exitosamente, ahora puede ingresar al curso!";
 				unset($name);
 				unset($email);
 				unset($pass);
+                unset($dis);
 			} else {
 				$errTyp = "danger";
-				$errMSG = "Something went wrong, try again later...";	
+				$errMSG = "Ha ocurrido un error, intente de nuevo en un momento!";	
 			}	
 				
 		}
@@ -87,7 +105,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Coding Cage - Login & Registration System</title>
+<title>Curso de inglés accesible en línea</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -101,7 +119,7 @@
     	<div class="col-md-12">
         
         	<div class="form-group">
-            	<h2 class="">Sign Up.</h2>
+            	<h2 class="">Registrarse</h2>
             </div>
         
         	<div class="form-group">
@@ -124,7 +142,7 @@
             <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-            	<input type="text" name="name" class="form-control" placeholder="Enter Name" maxlength="50" value="<?php echo $name ?>" />
+            	<input type="text" name="name" class="form-control" placeholder="Nombre completo" maxlength="50" value="<?php echo $name ?>" />
                 </div>
                 <span class="text-danger"><?php echo $nameError; ?></span>
             </div>
@@ -132,7 +150,7 @@
             <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            	<input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
+            	<input type="email" name="email" class="form-control" placeholder="Correo electrónico" maxlength="40" value="<?php echo $email ?>" />
                 </div>
                 <span class="text-danger"><?php echo $emailError; ?></span>
             </div>
@@ -140,17 +158,25 @@
             <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-            	<input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="15" />
+            	<input type="password" name="pass" class="form-control" placeholder="Contraseña" maxlength="15" />
                 </div>
                 <span class="text-danger"><?php echo $passError; ?></span>
             </div>
             
             <div class="form-group">
+            	<div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+            	<input type="text" name="dis" class="form-control" placeholder="Discapacidad" maxlength="40" value="<?php echo $dis ?>" />
+                </div>
+                <span class="text-danger"><?php echo $disError; ?></span>
+            </div>
+            
+            <div class="form-group">
             	<hr />
             </div>
             
             <div class="form-group">
-            	<button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
+            	<button type="submit" class="btn btn-block btn-primary" name="btn-signup">Registrar</button>
             </div>
             
             <div class="form-group">
@@ -158,7 +184,7 @@
             </div>
             
             <div class="form-group">
-            	<a href="index.php">Sign in Here...</a>
+            	<a href="index.php">Ingresar</a>
             </div>
         
         </div>

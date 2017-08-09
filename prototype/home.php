@@ -13,17 +13,21 @@
 	$userRow=mysql_fetch_array($res);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Bienvenido - <?php echo $userRow['userEmail']; ?></title>
+<title>Bienvenido - <?php echo $userRow['userName']; ?></title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
+<div >
+    <img id="banner" src="assets/img/inglesFuturo.jpg" alt="Hombre y mujer ejecutivos a lado de un texto que dice: El inglés te conecta con el mundo" height="250">
+</div>
+	<nav class="navbar navbar-light bg-faded">
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+        <div class="container">
+
         <div class="navbar-header">
             <a class="navbar-brand" href="home.php">Menu</a>
         </div>
@@ -36,7 +40,7 @@
 
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                          <span class="glyphicon glyphicon-user"></span>&nbsp;Bienvenido :<?php echo $userRow['userEmail']; ?>&nbsp;<span class="caret"></span></a>
+                          <span class="glyphicon glyphicon-user"></span>&nbsp;Bienvenido :<?php echo $userRow['userName']; ?>&nbsp;<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Cerrar Sesión</a></li>
                       </ul>

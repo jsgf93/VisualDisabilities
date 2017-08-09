@@ -25,15 +25,15 @@
 		
 		if(empty($email)){
 			$error = true;
-			$emailError = "Please enter your email address.";
+			$emailError = "Por favor, ingrese su correo electrónico.";
 		} else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
 			$error = true;
-			$emailError = "Please enter valid email address.";
+			$emailError = "Por favor, ingrese un correo electrónico válido.";
 		}
 		
 		if(empty($pass)){
 			$error = true;
-			$passError = "Please enter your password.";
+			$passError = "Por favor ingrese su contraseña.";
 		}
 		
 		// if there's no error, continue to login
@@ -41,7 +41,7 @@
 			
 			$password = hash('sha256', $pass); // password hashing using SHA256
 		
-			$res=mysql_query("SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
+			$res=mysql_query("SELECT userId, userName, userPass, userDis FROM users WHERE userEmail='$email'");
 			$row=mysql_fetch_array($res);
 			$count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
 			
@@ -49,7 +49,7 @@
 				$_SESSION['user'] = $row['userId'];
 				header("Location: home.php");
 			} else {
-				$errMSG = "Incorrect Credentials, Try again...";
+				$errMSG = "Credenciales incorrectas, intente de nuevo en un momento!";
 			}
 				
 		}
@@ -60,7 +60,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Coding Cage - Login & Registration System</title>
+<title>Curso de inglés accesible en línea</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -68,13 +68,15 @@
 
 <div class="container">
 
+
+
 	<div id="login-form">
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
     
     	<div class="col-md-12">
         
         	<div class="form-group">
-            	<h2 class="">Sign In.</h2>
+            	<h2 class="">Ingresar</h2>
             </div>
         
         	<div class="form-group">
@@ -97,7 +99,7 @@
             <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            	<input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
+            	<input type="email" name="email" class="form-control" placeholder="Correo electrónico" value="<?php echo $email; ?>" maxlength="40" />
                 </div>
                 <span class="text-danger"><?php echo $emailError; ?></span>
             </div>
@@ -105,7 +107,7 @@
             <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-            	<input type="password" name="pass" class="form-control" placeholder="Your Password" maxlength="15" />
+            	<input type="password" name="pass" class="form-control" placeholder="Contraseña" maxlength="15" />
                 </div>
                 <span class="text-danger"><?php echo $passError; ?></span>
             </div>
@@ -115,7 +117,7 @@
             </div>
             
             <div class="form-group">
-            	<button type="submit" class="btn btn-block btn-primary" name="btn-login">Sign In</button>
+            	<button type="submit" class="btn btn-block btn-primary" name="btn-login">Ingresar</button>
             </div>
             
             <div class="form-group">
@@ -123,7 +125,7 @@
             </div>
             
             <div class="form-group">
-            	<a href="register.php">Sign Up Here...</a>
+            	<a href="register.php">Registrarse</a>
             </div>
         
         </div>
