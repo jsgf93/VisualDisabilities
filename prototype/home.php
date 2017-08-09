@@ -16,9 +16,24 @@
 <html lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+.contenido {
+    background-color: lightblue;
+}
+.contenido2 {
+    background-color: lightblue;
+}
+.titulo {
+    font-family: verdana;
+    font-size: 20px;
+}
+.titulo2 {
+    font-family: verdana;
+    font-size: 20px;
+}
+</style>
 <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
 <div >
@@ -40,7 +55,12 @@
 
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                          <span class="glyphicon glyphicon-user"></span>&nbsp;Bienvenido :<?php echo $userRow['userName']; ?>&nbsp;<span class="caret"></span></a>
+                          <span class="glyphicon glyphicon-user"></span>&nbsp;Bienvenido :<?php 
+                          if ($userRow['userDis']=="daltonismo")
+                          {
+                              echo $userRow['userName'];
+                              echo $userRow['userName'];
+                          } ?>&nbsp;<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Cerrar Sesión</a></li>
                       </ul>
@@ -54,12 +74,12 @@
 
 	<div class="container">
     
-    	<div class="page-header">
+    	<div class="<?php if ($userRow['userDis']=="daltonismo") echo 'contenido2';?>">
     	<h3>Bienvenido al curso básico de inglés</h3>
     	</div>
         
         <div class="row">
-        <div class="col-lg-12">
+        <div class="<?php if ($userRow['userDis']=="daltonismo") echo 'contenido2';?>">
         <h1>Este curso consta de una sola lección y una evaluación</h1>
         </div>
         </div>
