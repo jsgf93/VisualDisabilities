@@ -16,7 +16,12 @@ $userRow=mysql_fetch_array($res);
     <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<<<<<<< HEAD
         <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
+=======
+        <title>Bienvenido - Angel</title>
+        <!--<?php echo $userRow['userEmail']; ?>-->
+>>>>>>> origin/master
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
         <link rel="stylesheet" href="style.css" type="text/css" />
         <script src="assets/jquery-1.11.3-jquery.min.js"></script>
@@ -41,7 +46,11 @@ $userRow=mysql_fetch_array($res);
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
+<<<<<<< HEAD
                             <span class="glyphicon glyphicon-user"></span>&nbsp;Bienvenido :<?php echo $userRow['userName']; ?>&nbsp;<span class="caret"></span></a>
+=======
+                            <span class="glyphicon glyphicon-user"></span>&nbsp;Bienvenido :<?php echo $userRow['userEmail']; ?>&nbsp;<span class="caret"></span></a>
+>>>>>>> origin/master
                         <ul class="dropdown-menu">
                             <li><a href="logout.php?logout" tabindex="0"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Cerrar Sesión</a></li>
                         </ul>
