@@ -110,16 +110,17 @@
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
-
+<div >
+    <img id="banner" src="assets/img/banner1.jpg" alt="Imagen de una ola color azul" height="150">
+</div>
 <div class="container">
-
 	<div id="login-form">
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
     
     	<div class="col-md-12">
         
         	<div class="form-group">
-            	<h2 class="">Registrarse</h2>
+            	<h1 id="registroTitulo" class="text-center" aria-label="Registrarse" tabindex="0">Registrarse</h1>
             </div>
         
         	<div class="form-group">
@@ -142,7 +143,7 @@
             <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-            	<input type="text" name="name" class="form-control" placeholder="Nombre completo" maxlength="50" value="<?php echo $name ?>" />
+            	<input type="text" name="name" class="form-control" placeholder="Nombre completo" maxlength="50" value="<?php echo $name ?>" aria-label="nombre" tabindex="0"/>
                 </div>
                 <span class="text-danger"><?php echo $nameError; ?></span>
             </div>
@@ -150,7 +151,7 @@
             <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            	<input type="email" name="email" class="form-control" placeholder="Correo electrónico" maxlength="40" value="<?php echo $email ?>" />
+            	<input type="email" name="email" class="form-control" placeholder="Correo electrónico" maxlength="40" value="<?php echo $email ?>" aria-label="correo electronico" tabindex="0"/>
                 </div>
                 <span class="text-danger"><?php echo $emailError; ?></span>
             </div>
@@ -158,7 +159,7 @@
             <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-            	<input type="password" name="pass" class="form-control" placeholder="Contraseña" maxlength="15" />
+            	<input type="password" name="pass" class="form-control" placeholder="Contraseña" maxlength="15" aria-label="Contraseña" tabindex="0"/>
                 </div>
                 <span class="text-danger"><?php echo $passError; ?></span>
             </div>
@@ -166,7 +167,7 @@
             <div class="form-group">
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            	<input type="text" name="dis" class="form-control" placeholder="Discapacidad" maxlength="40" value="<?php echo $dis ?>" />
+            	<input type="text" name="dis" class="form-control" placeholder="Discapacidad" maxlength="40" value="<?php echo $dis ?>" aria-label="Discapacidad" tabindex="0"/>
                 </div>
                 <span class="text-danger"><?php echo $disError; ?></span>
             </div>
@@ -176,7 +177,7 @@
             </div>
             
             <div class="form-group">
-            	<button type="submit" class="btn btn-block btn-primary" name="btn-signup">Registrar</button>
+            	<button type="submit" class="btn btn-block btn-primary" name="btn-signup" aria-label="Boton registrar" tabindex="0">Registrar</button>
             </div>
             
             <div class="form-group">
@@ -184,16 +185,16 @@
             </div>
             
             <div class="form-group">
-            	<a href="index.php">Ingresar</a>
+            	<a href="index.php" aria-label="Ir a la página de ingreso" tabindex="0">Ingresar</a>
             </div>
         
         </div>
    
     </form>
-    </div>	
-
+    </div>
 </div>
 
 </body>
+
 </html>
 <?php ob_end_flush(); ?>

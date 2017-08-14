@@ -33,7 +33,8 @@
 }
 </style>
 <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
-<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 </head>
 <body>
 <div >
@@ -55,11 +56,11 @@
 
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                          <span class="glyphicon glyphicon-user"></span>&nbsp;Bienvenido :<?php 
+                          <span class="glyphicon glyphicon-user"></span>&nbsp;Bienvenido: <?php
                           if ($userRow['userDis']=="daltonismo")
                           {
-                              echo $userRow['userName'];
-                              echo $userRow['userName'];
+
+                              echo strtoupper($userRow['userName']);
                           } ?>&nbsp;<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Cerrar Sesión</a></li>
