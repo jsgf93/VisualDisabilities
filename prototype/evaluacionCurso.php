@@ -11,6 +11,8 @@ if( !isset($_SESSION['user']) ) {
 // select loggedin users detail
 $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
+
+
 ?>
     <!DOCTYPE html>
     <html lang="es">
@@ -56,7 +58,7 @@ $userRow=mysql_fetch_array($res);
                 <br>
                 <h1 class="text-center" tabindex="0"><strong>Evaluacion de la primera lección</strong></h1>
             </div>
-            <form>
+            <form method="post">
 
                 <!--primera pregunta-->
                 <fieldset class="form-group row">
@@ -67,19 +69,25 @@ $userRow=mysql_fetch_array($res);
                         <p tabindex="0">El verbo to be sirve para describir</p>
                         <div class="form-check" tabindex="0">
                             <label class="form-check-label" >
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="rc1" >
+                                <input class="form-check-input" type="radio" name="primeraPregunta" id="gridRadios1"
+                                <?php if (isset($primeraPregunta)&& $primeraPregunta=="Acciones") echo "checked";?>
+                                       value="Acciones">
                                  Acciones
                             </label>
                         </div>
                         <div class="form-check" tabindex="0">
                             <label class="form-check-label"  >
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="ri1">
+                                <input class="form-check-input" type="radio" name="primeroPregunta" id="gridRadios2"
+                                    <?php if (isset($primeraPregunta)&& $primeraPregunta=="Estados") echo "checked";?>
+                                       value="Estados">
                                 Estados de un objeto
                             </label>
                         </div>
                         <div class="form-check" tabindex="0">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="ri2" >
+                                <input class="form-check-input" type="radio" name="primeraPregunta" id="gridRadios3"
+                                    <?php if (isset($primeraPregunta)&& $primeraPregunta=="Ninguna") echo "checked";?>
+                                       value="Ninguna" >
                                 Ninguna
                             </label>
                         </div>
@@ -95,19 +103,25 @@ $userRow=mysql_fetch_array($res);
                         <p tabindex="0">Estructura de una pregunta con el verbo to be</p>
                         <div class="form-check" tabindex="0">
                             <label class="form-check-label" >
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="rc2" >
+                                <input class="form-check-input" type="radio" name="segundaPregunta" id="gridRadios4"
+                                    <?php if (isset($segundaPregunta)&& $segundaPregunta=="rc2") echo "checked";?>
+                                       value="rc2" >
                                 To be + Sujeto (pronombre personal) + oración
                             </label>
                         </div>
                         <div class="form-check" tabindex="0">
                             <label class="form-check-label"  >
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="ri12">
+                                <input class="form-check-input" type="radio" name="segundaPregunta" id="gridRadios5"
+                                    <?php if (isset($segundaPregunta)&& $segundaPregunta=="ri21") echo "checked";?>
+                                       value="ri21">
                                 Sujeto (pronombre personal) + oración + to be
                             </label>
                         </div>
                         <div class="form-check" tabindex="0">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="ri22" >
+                                <input class="form-check-input" type="radio" name="segundaPregunta" id="gridRadios6"
+                                    <?php if (isset($segundaPregunta)&& $segundaPregunta=="ri22") echo "checked";?>
+                                       value="ri22" >
                                 Oración + to be + Sujeto (pronombre personal)
                             </label>
                         </div>
@@ -122,19 +136,25 @@ $userRow=mysql_fetch_array($res);
                             <p tabindex="0">Seleccione la oración que usted crea que esta correcta</p>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label" >
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="rc3" >
+                                    <input class="form-check-input" type="radio" name="terceraPregunta" id="gridRadios7"
+                                        <?php if (isset($terceraPregunta)&& $terceraPregunta=="rc3") echo "checked";?>
+                                           value="rc3" >
                                     I am a student
                                 </label>
                             </div>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label"  >
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="ri13">
+                                    <input class="form-check-input" type="radio" name="terceraPregunta" id="gridRadios8"
+                                        <?php if (isset($terceraPregunta)&& $terceraPregunta=="ri13") echo "checked";?>
+                                           value="ri13">
                                     I a am student
                                 </label>
                             </div>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="ri23" >
+                                    <input class="form-check-input" type="radio" name="terceraPregunta" id="gridRadios9"
+                                        <?php if (isset($terceraPregunta)&& $terceraPregunta=="ri23") echo "checked";?>
+                                           value="ri23" >
                                     I student am a
                                 </label>
                             </div>
@@ -149,19 +169,25 @@ $userRow=mysql_fetch_array($res);
                             <p tabindex="0">Cual es la estructura de una oración negativa con el verbo to be </p>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label" >
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="rc4" >
+                                    <input class="form-check-input" type="radio" name="cuartaPregunta" id="gridRadios10"
+                                        <?php if (isset($cuartaPregunta)&& $cuartaPregunta=="ri41") echo "checked";?>
+                                           value="ri41" >
                                     To be + not + Sujeto (pronombre personal) + oración
                                 </label>
                             </div>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label"  >
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="ri14">
+                                    <input class="form-check-input" type="radio" name="cuartaPregunta" id="gridRadios11"
+                                        <?php if (isset($cuartaPregunta)&& $cuartaPregunta=="rc4") echo "checked";?>
+                                           value="rc4">
                                     Sujeto (pronombre personal)+ To be + not + oración
                                 </label>
                             </div>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="ri24" >
+                                    <input class="form-check-input" type="radio" name="cuartaPregunta" id="gridRadios12"
+                                        <?php if (isset($cuartaPregunta)&& $cuartaPregunta=="ri42") echo "checked";?>
+                                           value="ri42" >
                                     Oración + not + to be + sujeto (pronombre personal)
                                 </label>
                             </div>
@@ -176,19 +202,25 @@ $userRow=mysql_fetch_array($res);
                             <p tabindex="0">Seleccione la oración que usted crea que esta correctamente escrita</p>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label" >
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="rc5">
+                                    <input class="form-check-input" type="radio" name="quitaPregunta" id="gridRadios13"
+                                        <?php if (isset($quintaPregunta)&& $quintaPregunta=="ri51") echo "checked";?>
+                                           value="ri51">
                                     I not am a student
                                 </label>
                             </div>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label"  >
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="ri15">
+                                    <input class="form-check-input" type="radio" name="quitaPregunta" id="gridRadios14"
+                                        <?php if (isset($quintaPregunta)&& $quintaPregunta=="ri52") echo "checked";?>
+                                           value="ri52">
                                     I a am not a student
                                 </label>
                             </div>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="ri25" >
+                                    <input class="form-check-input" type="radio" name="quitaPregunta" id="gridRadios15"
+                                        <?php if (isset($quintaPregunta)&& $quintaPregunta=="rc5") echo "checked";?>
+                                           value="rc5" >
                                     I am not a student
                                 </label>
                             </div>
@@ -199,10 +231,22 @@ $userRow=mysql_fetch_array($res);
 
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary" tabindex="0">Finalizar Evaluación</button>
+                        <button type="submit" name="enviar" value="Enviar" class="btn btn-primary" tabindex="0">Finalizar Evaluación</button>
                     </div>
                 </div>
             </form>
+
+            <?php
+            //Si se pulsa el botón de enviar
+            if (isset($_POST['enviar'])) {
+                //Si el checkbox condiciones tiene valor y es igual a 1
+                if (isset($_POST['quitaPregunta']) && $_POST['quitaPregunta'] == 'rc5')
+                    echo '<div style="color:green">Respuesta correcta</div>';
+                else
+                    echo '<div style="color:red">Respuesta incorrecta</div>';
+            }
+            ?>
+
         </div>
     </div>
 
