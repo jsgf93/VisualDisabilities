@@ -16,8 +16,6 @@ $respuesta2;
 $respuesta3;
 $respuesta4;
 $respuesta5;
-
-
 ?>
     <!DOCTYPE html>
     <html lang="es">
@@ -71,7 +69,7 @@ $respuesta5;
 
                     <div class="col-sm-12">
 
-                        <p tabindex="0">El verbo to be sirve para describir</p>
+                        <h2 tabindex="0">El verbo to be sirve para describir</h2>
                         <div class="form-check" tabindex="0">
                             <label class="form-check-label" >
                                 <input class="form-check-input" type="radio" name="primeraPregunta" id="gridRadios1" value="ri11">
@@ -99,7 +97,7 @@ $respuesta5;
 
                     <div class="col-sm-12">
 
-                        <p tabindex="0">Estructura de una pregunta con el verbo to be</p>
+                        <h2 tabindex="0">Estructura de una pregunta con el verbo to be</h2>
                         <div class="form-check" tabindex="0">
                             <label class="form-check-label" >
                                 <input class="form-check-input" type="radio" name="segundaPregunta" id="gridRadios4" value="rc2" >
@@ -126,7 +124,7 @@ $respuesta5;
                     <legend class="col-form-legend col-sm-12" tabindex="0">Tercera pregunta</legend>
 
                         <div class="col-sm-12">
-                            <p tabindex="0">Seleccione la oración que usted crea que esta correcta</p>
+                            <h2 tabindex="0">Seleccione la oración que usted crea que esta correcta</h2>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label" >
                                     <input class="form-check-input" type="radio" name="terceraPregunta" id="gridRadios7" value="rc3" >
@@ -153,7 +151,7 @@ $respuesta5;
                     <legend class="col-form-legend col-sm-12" tabindex="0">Cuarta pregunta</legend>
 
                         <div class="col-sm-12">
-                            <p tabindex="0">Cual es la estructura de una oración negativa con el verbo to be </p>
+                            <h2 tabindex="0">Cual es la estructura de una oración negativa con el verbo to be </h2>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label" >
                                     <input class="form-check-input" type="radio" name="cuartaPregunta" id="gridRadios10" value="ri41" >
@@ -178,7 +176,7 @@ $respuesta5;
                 <fieldset class="form-group row">
                     <legend class="col-form-legend col-sm-12" tabindex="0">Quinta pregunta</legend>
                         <div class="col-sm-12">
-                            <p tabindex="0">Seleccione la oración que usted crea que esta correctamente escrita</p>
+                            <h2 tabindex="0">Seleccione la oración que usted crea que esta correctamente escrita</h2>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label" >
                                     <input class="form-check-input" type="radio" name="quitaPregunta" id="gridRadios13" value="ri51">
@@ -283,7 +281,7 @@ $respuesta5;
                                 <div class="form-group">
                                     <hr />
                                 </div>
-                                <div tabindex="0" style="color: green">CALIFICACION:<?php echo $total; ?>/100  <?php echo $mensaje; ?></div>
+                                <div tabindex="0" style="color: green">Calificación:<?php echo $total; ?>/100  <?php echo $mensaje; ?></div>
                             </div>
                             <div class="modal-footer">
                                 <button tabindex="0" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
