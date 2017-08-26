@@ -1,4 +1,5 @@
 <?php
+    include 'adapter.php';
 	ob_start();
 	session_start();
 	require_once 'dbconnect.php';
@@ -16,27 +17,32 @@
 <html lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-.contenido {
-    background-color: lightblue;
-}
-.contenido2 {
-    background-color: lightblue;
-}
-.titulo {
-    font-family: verdana;
-    font-size: 20px;
-}
-.titulo2 {
-    font-family: verdana;
-    font-size: 20px;
-}
+
+<style>
+    .daltonismo {
+        background-color: white;
+        color: black;
+    }
+    .ceguera {
+        background-color: white;
+        color: black;
+    }
+    .visionBorrosa {
+        font-size: 28px;
+        background-color: white;
+        color: black;
+    }
+    .sinDiscapacidad {
+        background-color: powderblue;
+        color: white;
+    }
 </style>
+    
 <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 </head>
-<body>
+<body class="<?php echo adapter($userRow['userDis']);?>">
 <div >
     <img id="banner" src="assets/img/inglesFuturo.jpg" alt="Hombre y mujer ejecutivos a lado de un texto que dice: El inglés te conecta con el mundo" height="250">
 </div>
@@ -45,7 +51,7 @@
         <div class="container">
 
         <div class="navbar-header">
-            <a class="navbar-brand" href="home.php">Menu</a>
+            <a id="m1" class="navbar-brand" href="home.php">Menu</a>
         </div>
           <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
@@ -56,12 +62,7 @@
 
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                          <span class="glyphicon glyphicon-user"></span>&nbsp;Bienvenido: <?php
-                          if ($userRow['userDis']=="daltonismo")
-                          {
-
-                              echo strtoupper($userRow['userName']);
-                          } ?>&nbsp;<span class="caret"></span></a>
+                          <span class="glyphicon glyphicon-user"></span>&nbsp;Bienvenido: <?php echo strtoupper($userRow['userName']); ?>&nbsp;<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                           <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Cerrar Sesión</a></li>
                       </ul>
@@ -75,13 +76,20 @@
 
 	<div class="container">
     
-    	<div class="<?php if ($userRow['userDis']=="daltonismo") echo 'contenido2';?>">
-    	<h3>Bienvenido al curso básico de inglés</h3>
+    	<div class="row" style="text-align:center;">
+    	<h1>Bienvenido al curso básico de inglés</h1>
     	</div>
         
         <div class="row">
-        <div class="<?php if ($userRow['userDis']=="daltonismo") echo 'contenido2';?>">
-        <h1>Este curso consta de una sola lección y una evaluación</h1>
+        <div style="text-align:center;">
+        <br>   
+        <h2>Este es el primer curso de inglés en línea que implementa accesibilidad para usuarios con discapacidades visuales.</h2>
+        <br>
+        <h3> Basta de limitaciones, aprender inglés nunca fue más facil!</h3>
+        <br>
+        <a href="curso.php" aria-label="Iniciar primera lección" tabindex="0"> Iniciar primera lección</a>
+        <br>
+        <br>
         </div>
         </div>
     

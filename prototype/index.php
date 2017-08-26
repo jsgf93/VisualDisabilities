@@ -77,10 +77,6 @@
                     <h1 id="loginTitulo" class="text-center" aria-label="ingresar" tabindex="0">Ingresar</h1>
                 </div>
 
-                <div class="form-group">
-                    <hr />
-                </div>
-
                 <?php
                 if ( isset($errMSG) ) {
 

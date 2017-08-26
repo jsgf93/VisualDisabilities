@@ -1,4 +1,5 @@
 <?php
+include 'adapter.php';
 ob_start();
 session_start();
 require_once 'dbconnect.php';
@@ -12,23 +13,42 @@ if( !isset($_SESSION['user']) ) {
 $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
 ?>
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
-        <link rel="stylesheet" href="style.css" type="text/css" />
-
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        .daltonismo {
+            background-color: white;
+            color: black;
+        }
+        .ceguera {
+            background-color: white;
+            color: black;
+        }
+        .visionBorrosa {
+            font-size: 28px;
+            background-color: white;
+            color: black;
+        }
+        .sinDiscapacidad {
+            background-color: powderblue;
+            color: white;
+        }
+    </style>
+    <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+    
+<body class="<?php echo adapter($userRow['userDis']);?>">
     <div >
         <img id="banner" src="assets/img/inglesFuturo.jpg" alt="Hombre y mujer ejecutivos a lado de un texto que dice: El inglés te conecta con el mundo" height="250">
     </div>
     <nav class="navbar navbar-light bg-faded">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="home.php">Menu</a>
+                <a id="m1" class="navbar-brand" href="home.php">Menu</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -56,29 +76,27 @@ $userRow=mysql_fetch_array($res);
 
             <div class="page-header">
                 <h1 class="text-center"><strong>Verbo to be</strong></h1>
-                <p>Este verbo es el equivalente a los verbos "ser" y "estar", en el idioma inglés goza de una particular importancia.
-                Su significado depende del sentido de la oración.</p>
+                <h2>Este verbo es el equivalente a los verbos "ser" y "estar", en el idioma inglés goza de una particular importancia.
+                Su significado depende del sentido de la oración.</h2>
             </div>
 
             <div id="padre" class="row">
 
-                <div id="concepto" class="col-xs-6 col-md-4">
-
-                        <p>
+                <div id="concepto" class="col-xs-12 col-md-8">
+                    <p>
                         El verbo “to be” es el verbo más importante del inglés.
                         Se utiliza tanto como un verbo principal como un verbo auxiliar y es irregular en el presente y el pasado.
-                        </p>
-
-                </div>
-                <div class="col-xs-6 col-md-4">
-                    <iframe width="304" height="236" src="https://www.youtube.com/embed/6ToyS-u_YLw" frameborder="0" allowfullscreen></iframe>
+                    </p>   
                 </div>
                 <div class="col-xs-6 col-md-4">
                     <img src="assets/img/apendeIngles.PNG" class="img-rounded" alt="Learn English (aprende inglés)" width="304" height="236">
                 </div>
-
+            </div>
+            <div style="text-align: center">
+                    <iframe width="600" height="400" src="https://www.youtube.com/embed/6ToyS-u_YLw" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="row">
+                <br>
                 <table class="table table-hover">
                     <thead>
                     <tr>

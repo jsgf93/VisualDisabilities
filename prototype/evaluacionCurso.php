@@ -1,4 +1,5 @@
 <?php
+include 'adapter.php';
 ob_start();
 session_start();
 require_once 'dbconnect.php';
@@ -21,6 +22,25 @@ $respuesta5;
     <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style>
+            .daltonismo {
+                background-color: white;
+                color: black;
+            }
+            .ceguera {
+                background-color: white;
+                color: black;
+            }
+            .visionBorrosa {
+                font-size: 28px;
+                background-color: white;
+                color: black;
+            }
+            .sinDiscapacidad {
+                background-color: powderblue;
+                color: white;
+            }
+        </style>
         <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
         <link rel="stylesheet" href="style.css" type="text/css" />
@@ -28,14 +48,14 @@ $respuesta5;
         <script src="assets/js/bootstrap.min.js"></script>
 
     </head>
-    <body>
+    <body class="<?php echo adapter($userRow['userDis']);?>">
     <div >
         <img id="banner" src="assets/img/inglesFuturo.jpg" alt="Hombre y mujer ejecutivos a lado de un texto que dice: El inglés te conecta con el mundo" height="250">
     </div>
     <nav class="navbar navbar-light bg-faded">
         <div class="container" >
             <div class="navbar-header">
-                <a class="navbar-brand" href="home.php" tabindex="0">Menu</a>
+                <a id="m1" class="navbar-brand" href="home.php" tabindex="0">Menu</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse" >
                 <ul class="nav navbar-nav">
@@ -65,7 +85,7 @@ $respuesta5;
 
                 <!--primera pregunta-->
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-12" tabindex="0">Primera pregunta</legend>
+                    <legend id="p1" class="col-form-legend col-sm-12" tabindex="0">Primera pregunta</legend>
 
                     <div class="col-sm-12">
 
@@ -93,7 +113,7 @@ $respuesta5;
                 </fieldset>
 
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-12" tabindex="0">Segunda pregunta</legend>
+                    <legend id="p2" class="col-form-legend col-sm-12" tabindex="0">Segunda pregunta</legend>
 
                     <div class="col-sm-12">
 
@@ -121,7 +141,7 @@ $respuesta5;
                 </fieldset>
 
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-12" tabindex="0">Tercera pregunta</legend>
+                    <legend id="p3" class="col-form-legend col-sm-12" tabindex="0">Tercera pregunta</legend>
 
                         <div class="col-sm-12">
                             <h2 tabindex="0">Seleccione la oración que usted crea que esta correcta</h2>
@@ -148,7 +168,7 @@ $respuesta5;
                 </fieldset>
 
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-12" tabindex="0">Cuarta pregunta</legend>
+                    <legend id="p4" class="col-form-legend col-sm-12" tabindex="0">Cuarta pregunta</legend>
 
                         <div class="col-sm-12">
                             <h2 tabindex="0">Cual es la estructura de una oración negativa con el verbo to be </h2>
@@ -174,7 +194,7 @@ $respuesta5;
                 </fieldset>
 
                 <fieldset class="form-group row">
-                    <legend class="col-form-legend col-sm-12" tabindex="0">Quinta pregunta</legend>
+                    <legend id="p5" class="col-form-legend col-sm-12" tabindex="0">Quinta pregunta</legend>
                         <div class="col-sm-12">
                             <h2 tabindex="0">Seleccione la oración que usted crea que esta correctamente escrita</h2>
                             <div class="form-check" tabindex="0">
@@ -270,7 +290,7 @@ $respuesta5;
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" tabindex="0">&times;</button>
-                                <h4 class="modal-title" tabindex="0">Resultado de la evaluación</h4>
+                                <h4 id="r1" class="modal-title" tabindex="0">Resultado de la evaluación</h4>
                             </div>
                             <div class="modal-body">
                                 <div tabindex="0" style="color: green"><?php echo $respuesta1; ?></div>
