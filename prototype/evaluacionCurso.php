@@ -297,15 +297,15 @@ $respuesta5;
                                 <h4 id="r1" class="modal-title" tabindex="0">Resultado de la evaluación</h4>
                             </div>
                             <div class="modal-body">
-                                <div tabindex="0" style="color: green"><?php echo $respuesta1; ?></div>
-                                <div tabindex="0" style="color: green"><?php echo $respuesta2; ?></div>
-                                <div tabindex="0" style="color: green"><?php echo $respuesta3; ?></div>
-                                <div tabindex="0" style="color: green"><?php echo $respuesta4; ?></div>
-                                <div tabindex="0" style="color: green"><?php echo $respuesta5; ?></div>
+                                <div tabindex="0" ><?php echo $respuesta1; ?></div>
+                                <div tabindex="0" ><?php echo $respuesta2; ?></div>
+                                <div tabindex="0" ><?php echo $respuesta3; ?></div>
+                                <div tabindex="0" ><?php echo $respuesta4; ?></div>
+                                <div tabindex="0" ><?php echo $respuesta5; ?></div>
                                 <div class="form-group">
                                     <hr />
                                 </div>
-                                <div tabindex="0" style="color: green">Calificación:<?php echo $total; ?>/100  <?php echo $mensaje; ?></div>
+                                <div tabindex="0">Calificación:<?php echo $total; ?>/100  <?php echo $mensaje; ?></div>
                             </div>
                             <div class="modal-footer">
                                 <button tabindex="0" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
