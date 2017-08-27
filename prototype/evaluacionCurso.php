@@ -36,10 +36,14 @@ $respuesta5;
                 background-color: white;
                 color: black;
             }
-            .sinDiscapacidad {
-                background-color: powderblue;
-                color: white;
+            .sinDiscapacidad, r1 {
+                background-color: #00BCD4;
+                color: red;
             }
+            .sinDiscapacidad{
+                            background-color: #E3F2FD;
+                            color: #1565C0;
+                        }
         </style>
         <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />

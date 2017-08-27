@@ -33,8 +33,8 @@
         color: black;
     }
     .sinDiscapacidad {
-        background-color: powderblue;
-        color: white;
+        background-color: #E3F2FD;
+        color: #1565C0;
     }
 </style>
     
