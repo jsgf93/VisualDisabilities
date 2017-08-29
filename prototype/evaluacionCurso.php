@@ -11,48 +11,25 @@ if( !isset($_SESSION['user']) ) {
 }
 // select loggedin users detail
 $res=mysql_query("SELECT * FROM users WHERE userId=".$_SESSION['user']);
-$userRow=mysql_fetch_array($res);
-$respuesta1;
-$respuesta2;
-$respuesta3;
-$respuesta4;
-$respuesta5;
-?>
+$userRow=mysql_fetch_array($res);?>
     <!DOCTYPE html>
     <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <style>
-            .daltonismo {
-                background-color: white;
-                color: black;
-            }
-            .ceguera {
-                background-color: white;
-                color: black;
-            }
-            .visionBorrosa {
-                font-size: 28px;
-                background-color: white;
-                color: black;
-            }
-            .sinDiscapacidad, r1 {
-                background-color: #00BCD4;
-                color: red;
-            }
-            .sinDiscapacidad{
-                            background-color: #E3F2FD;
-                            color: #1565C0;
-                        }
-        </style>
-        <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet">
+        <link rel="stylesheet" href="Discapacidades.css" type="text/css" />
         <link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
         <script src="assets/jquery-1.11.3-jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
 
+        <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
     </head>
-    <body class="<?php echo adapter($userRow['userDis']);?>">
+    <body id="<?php echo adapter($userRow['userDis']);?>">
     <div >
         <img id="banner" src="assets/img/inglesFuturo.jpg" alt="Hombre y mujer ejecutivos a lado de un texto que dice: El inglés te conecta con el mundo" height="250">
     </div>

@@ -16,33 +16,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<style>
-    .daltonismo {
-        background-color: white;
-        color: black;
-    }
-    .ceguera {
-        background-color: white;
-        color: black;
-    }
-    .visionBorrosa {
-        font-size: 28px;
-        background-color: white;
-        color: black;
-    }
-    .sinDiscapacidad {
-        background-color: #E3F2FD;
-        color: #1565C0;
-    }
-</style>
-    
-<title>Bienvenido - <?php echo $userRow['userName']; ?></title>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet">
+    <link rel="stylesheet" href="Discapacidades.css" type="text/css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
+<title>Bienvenido - <?php echo $userRow['userName']; ?></title>
 </head>
-<body class="<?php echo adapter($userRow['userDis']);?>">
+<body id="<?php echo adapter($userRow['userDis']);?>">
 <div >
     <img id="banner" src="assets/img/inglesFuturo.jpg" alt="Hombre y mujer ejecutivos a lado de un texto que dice: El inglés te conecta con el mundo" height="250">
 </div>
