@@ -25,6 +25,15 @@ body{
 
 }
 
+#dina4 {
+	width: 210mm;
+	height: 365mm;
+	padding: 20px 60px;
+	border: 1px solid beige;
+	background: #fff;
+	margin: 10px auto;
+}
+
 #concepto{
 	clear: both;
 	height: 100px;

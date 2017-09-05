@@ -141,33 +141,38 @@
 			?>
             
             <div class="form-group">
+                <label for="nombre">Nombre</label>
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-            	<input type="text" name="name" class="form-control" placeholder="Nombre completo" maxlength="50" value="<?php echo $name ?>" aria-label="nombre" tabindex="0"/>
+            	    <input type="text" id="nombre" name="name" class="form-control" maxlength="50" value="<?php echo $name ?>" aria-label="nombre" tabindex="0"/>
+
                 </div>
                 <span class="text-danger"><?php echo $nameError; ?></span>
             </div>
             
             <div class="form-group">
+                <label for="correo">Correo</label>
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            	<input type="email" name="email" class="form-control" placeholder="Correo electrónico" maxlength="40" value="<?php echo $email ?>" aria-label="correo electronico" tabindex="0"/>
+            	<input type="email" id="correo" name="email" class="form-control" maxlength="40" value="<?php echo $email ?>" aria-label="correo electronico" tabindex="0"/>
                 </div>
                 <span class="text-danger"><?php echo $emailError; ?></span>
             </div>
             
             <div class="form-group">
+                <label for="psw">Contraseña</label>
             	<div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-            	<input type="password" name="pass" class="form-control" placeholder="Contraseña" maxlength="15" aria-label="Contraseña" tabindex="0"/>
+            	<input type="password" id="psw" name="pass" class="form-control" maxlength="15" aria-label="Contraseña" tabindex="0"/>
                 </div>
                 <span class="text-danger"><?php echo $passError; ?></span>
             </div>
             
             <div class="form-group">
+                <label for="discapacidad">Discapacidad</label>
             	<div class="input-group">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            	<input type="text" name="dis" class="form-control" placeholder="Discapacidad" maxlength="40" value="<?php echo $dis ?>" aria-label="Discapacidad" tabindex="0"/>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-eye-open"></span></span>
+            	<input type="text" id="discapacidad" name="dis" class="form-control" maxlength="40" value="<?php echo $dis ?>" aria-label="Discapacidad" tabindex="0"/>
                 </div>
                 <span class="text-danger"><?php echo $disError; ?></span>
             </div>

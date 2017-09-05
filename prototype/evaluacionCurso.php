@@ -57,7 +57,7 @@ $userRow=mysql_fetch_array($res);?>
         </div>
     </nav>
     <div id="wapper">
-        <div class="container">
+        <div class="container" id="dina4">
             <div class="page-header">
                 <br>
                 <h1 class="text-center" tabindex="0"><strong>Evaluacion de la primera lección</strong></h1>

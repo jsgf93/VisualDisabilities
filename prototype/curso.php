@@ -26,7 +26,8 @@ $userRow=mysql_fetch_array($res);
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 
     <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
-
+    <script src="assets/jquery-1.11.3-jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 </head>
     
 <body id="<?php echo adapter($userRow['userDis']);?>">
@@ -53,7 +54,7 @@ $userRow=mysql_fetch_array($res);
                         </ul>
                     </li>
                 </ul>
-            </div><!--/.nav-collapse -->
+            </div>
         </div>
     </nav>
 
@@ -64,9 +65,12 @@ $userRow=mysql_fetch_array($res);
 
             <div class="page-header">
                 <h1 class="text-center"><strong>Verbo to be</strong></h1>
+                <hr />
                 <h2>Este verbo es el equivalente a los verbos "ser" y "estar", en el idioma inglés goza de una particular importancia.
                 Su significado depende del sentido de la oración.</h2>
             </div>
+
+
 
             <div id="padre" class="row">
 
@@ -145,9 +149,8 @@ $userRow=mysql_fetch_array($res);
 
     </div>
 
-    <script src="assets/jquery-1.11.3-jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
 
     </body>
+
     </html>
 <?php ob_end_flush(); ?>
