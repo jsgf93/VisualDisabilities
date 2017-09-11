@@ -21,15 +21,25 @@ $userRow=mysql_fetch_array($res);?>
         <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet">
-        <link rel="stylesheet" href="Discapacidades.css" type="text/css" />
-        <link rel="stylesheet" href="style.css" type="text/css" />
+
+        <!-- load of different kind of pattern-->
+
+        <?php
+            if ((adapter($userRow['userDis'])=='ceguera')){
+                    $discapacidad=adapter($userRow['userDis']);
+            }
+        ?>
+
+        <link rel="stylesheet" href="Patrones/<?php echo $discapacidad?>.css" type="text/css" />
+
+
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
         <script src="assets/jquery-1.11.3-jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
 
-        <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
+        <title>Bienvenido - <?php echo $userRow['userDis']; ?></title>
     </head>
-    <body id="<?php echo adapter($userRow['userDis']);?>">
+    <body id="">
     <div >
         <img id="banner" src="assets/img/inglesFuturo.jpg" alt="Hombre y mujer ejecutivos a lado de un texto que dice: El inglés te conecta con el mundo" height="250">
     </div>
@@ -60,7 +70,7 @@ $userRow=mysql_fetch_array($res);?>
         <div class="container" id="dina4">
             <div class="page-header">
                 <br>
-                <h1 class="text-center" tabindex="0"><strong>Evaluacion de la primera lección</strong></h1>
+                <h1 class="text-center" tabindex="0"><strong>Evaluación de la Primera Lección</strong></h1>
             </div>
             <form method="post" action="evaluacionCurso.php">
 
@@ -248,13 +258,6 @@ $userRow=mysql_fetch_array($res);?>
                                 $valor5 = 0;
                             }
                             $total=$valor1+$valor2+$valor3+$valor4+$valor5;
-                            if ($total<50){
-                                $mensaje='Buen trabajo, sin embargo vuelva a intentarlo';
-                            }elseif ($total>50){
-                                $mensaje='Buen trabajo puede mejorar';
-                            }elseif ($total=100)
-                                $mensaje='Excelente ha acertado en todas las respuestas';
-                            //Si el checkbox condiciones tiene valor y es igual a 1
                                 echo '<script type="text/javascript">
                                     $(window).load(function(){
                                         $(\'#myModal\').modal(\'show\');
@@ -282,10 +285,10 @@ $userRow=mysql_fetch_array($res);?>
                                 <div class="form-group">
                                     <hr />
                                 </div>
-                                <div tabindex="0">Calificación:<?php echo $total; ?>/100  <?php echo $mensaje; ?></div>
+                                <div tabindex="0">Calificación:<?php echo $total; ?>/100</div>
                             </div>
                             <div class="modal-footer">
-                                <button tabindex="0" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                <button tabindex="0" type="button"  class="btn btn-default" data-dismiss="modal">Cerrar</button>
                             </div>
                         </div>
                     </div>

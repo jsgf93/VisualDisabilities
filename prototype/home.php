@@ -20,8 +20,17 @@
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet">
-    <link rel="stylesheet" href="Discapacidades.css" type="text/css" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <!-- load of different kind of pattern-->
+
+    <?php
+    if ((adapter($userRow['userDis'])=='ceguera')){
+        $discapacidad=adapter($userRow['userDis']);
+    }
+    ?>
+
+    <link rel="stylesheet" href="Patrones/<?php echo $discapacidad?>.css" type="text/css" />
+
+
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
 </head>
@@ -60,15 +69,15 @@
 	<div class="container">
     
     	<div class="row" style="text-align:center;">
-    	<h1>Bienvenido al curso básico de inglés</h1>
+    	<h1 tabindex="0">Bienvenido al curso básico de inglés</h1>
     	</div>
         
         <div class="row">
         <div style="text-align:center;">
         <br>   
-        <h2>Este es el primer curso de inglés en línea que implementa accesibilidad para usuarios con discapacidades visuales.</h2>
+        <h2 tabindex="0">Este es el primer curso de inglés en línea que implementa accesibilidad para usuarios con discapacidades visuales.</h2>
         <br>
-        <h3> Basta de limitaciones, aprender inglés nunca fue más facil!</h3>
+        <h3 tabindex="0"> Basta de limitaciones, aprender inglés nunca fue más facil!</h3>
         <br>
         <a href="curso.php" aria-label="Iniciar primera lección" tabindex="0"> Iniciar primera lección</a>
         <br>

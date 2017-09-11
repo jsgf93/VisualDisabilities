@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+
+
+#ceguera {
+    background-color: white;
+    color: black;
+    font-family: 'Noticia Text', serif;
+
+}
+
+#banner{
+	width: 100%;
+}
+
+
+#dina4 {
+    width: 210mm;
+    height: 365mm;
+    padding: 20px 60px;
+    border: 3px solid black;
+    background: #e6ffff;
+    margin: 10px auto;
+	font-family: 'Noticia Text', serif;
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+
+#login-form {
+	margin:5% auto;
+	max-width:500px;
+}
+
+
+/* home page */
+#wrapper{
+	padding-top:50px;
+}
+
+#divConceptoImagen
+{height: 250px;}
+
+#concepto{
+	clear: both;
+	height: 100px;
+}
+

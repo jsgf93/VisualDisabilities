@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+#daltonismo {
+    background-color: white;
+    color: black;
+    font-family: 'Acme', sans-serif;
+}
+#banner{
+	width: 100%;
+}
+
+#dina4 {
+    width: 210mm;
+    height: 365mm;
+    padding: 20px 60px;
+    border: 3px solid brown;
+    background: #fff;
+    margin: 10px auto;
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+#login-form {
+	margin:5% auto;
+	max-width:500px;
+}
+/* home page */
+#wrapper{
+	padding-top:50px;
+}
+
+#divConceptoImagen
+{height: 250px;}
+
+
+
+
+#concepto{
+	clear: both;
+	height: 100px;
+}

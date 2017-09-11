@@ -82,30 +82,29 @@
 
                     ?>
                     <div class="form-group">
-                    <div class="alert alert-danger">
-                    <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
-                    </div>
+                        <div class="alert alert-danger">
+                        <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
+                        </div>
                     </div>
                     <?php
                 }
                 ?>
 
                 <div class="form-group">
-                    <label for="correo" class="col-2 col-form-label">Correo</label>
+                    <label for="correo" id="lblCorreo" class="col-2 col-form-label">Correo</label>
                     <div class="input-group">
-
                         <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                        <input type="email" id="correo" name="email" class="form-control" value="<?php echo $email; ?>" maxlength="40" aria-label="Correo electrónico" tabindex="0"/>
+                        <input type="email" id="correo" name="email" class="form-control" value="<?php echo $email; ?>" maxlength="40" aria-labelledby="lblCorreo" tabindex="0"/>
                     </div>
                     <span class="text-danger"><?php echo $emailError; ?></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="contrasena" class="col-2 col-form-label">Contraseña</label>
+                    <label for="contrasena" id="lblContrasena" class="col-2 col-form-label">Contraseña</label>
                     <div class="input-group">
 
                         <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                        <input id="contrasena" type="password" name="pass" class="form-control" maxlength="15" aria-label="Contraseña" tabindex="0"/>
+                        <input id="contrasena" type="password" name="pass" class="form-control" maxlength="15" aria-labelledby="lblContrasena" tabindex="0"/>
                     </div>
                     <span class="text-danger"><?php echo $passError; ?></span>
                 </div>

@@ -21,8 +21,16 @@ $userRow=mysql_fetch_array($res);
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet">
-    <link rel="stylesheet" href="Discapacidades.css" type="text/css" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
+
+    <?php
+    if ((adapter($userRow['userDis'])=='ceguera')){
+        $discapacidad=adapter($userRow['userDis']);
+    }
+    ?>
+
+    <link rel="stylesheet" href="Patrones/<?php echo $discapacidad?>.css" type="text/css" />
+
+
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 
     <title>Bienvenido - <?php echo $userRow['userName']; ?></title>
@@ -64,79 +72,79 @@ $userRow=mysql_fetch_array($res);
         <div class="container">
 
             <div class="page-header">
-                <h1 class="text-center"><strong>Verbo to be</strong></h1>
+                <h1 class="text-center" tabindex="0"><strong>Verbo to be</strong></h1>
                 <hr />
-                <h2>Este verbo es el equivalente a los verbos "ser" y "estar", en el idioma inglés goza de una particular importancia.
+                <h2 tabindex="0">Este verbo es el equivalente a los verbos "ser" y "estar", en el idioma inglés goza de una particular importancia.
                 Su significado depende del sentido de la oración.</h2>
             </div>
 
 
 
-            <div id="padre" class="row">
+            <div id="divConceptoImagen" class="row">
 
-                <div id="concepto" class="col-xs-12 col-md-8">
+                <div id="concepto" class="col-xs-12 col-md-8" tabindex="0">
                     <p>
                         El verbo “to be” es el verbo más importante del inglés.
                         Se utiliza tanto como un verbo principal como un verbo auxiliar y es irregular en el presente y el pasado.
                     </p>   
                 </div>
-                <div class="col-xs-6 col-md-4">
+                <div class="col-xs-6 col-md-4" tabindex="0">
                     <img src="assets/img/apendeIngles.PNG" class="img-rounded" alt="Learn English (aprende inglés)" width="304" height="236">
                 </div>
             </div>
-            <div style="text-align: center">
+            <div style="text-align: center" tabindex="0">
                     <iframe width="600" height="400" src="https://www.youtube.com/embed/6ToyS-u_YLw" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="row">
                 <br>
-                <table class="table table-hover">
+                <table class="table table-hover" tabindex="0">
                     <thead>
                     <tr>
-                        <th>Pronombre Personal</th>
-                        <th>Verbo to be</th>
-                        <th>Traducción</th>
+                        <th tabindex="0">Pronombre Personal</th>
+                        <th tabindex="0">Verbo to be</th>
+                        <th tabindex="0">Traducción</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>I</td>
-                        <td>am</td>
-                        <td>Soy / estoy</td>
+                        <td tabindex="0">I</td>
+                        <td tabindex="0">am</td>
+                        <td tabindex="0">Soy / estoy</td>
                     </tr>
                     <tr>
-                        <td>You</td>
-                        <td>are</td>
-                        <td>Eres / Estás</td>
+                        <td tabindex="0">You</td>
+                        <td tabindex="0">are</td>
+                        <td tabindex="0">Eres / Estás</td>
                     </tr>
                     <tr>
-                        <td>He</td>
-                        <td>is</td>
-                        <td>Él es / está</td>
+                        <td tabindex="0">He</td>
+                        <td tabindex="0">is</td>
+                        <td tabindex="0">Él es / está</td>
                     </tr>
                     <tr>
-                        <td>She</td>
-                        <td>is</td>
-                        <td>Ella es / está</td>
+                        <td tabindex="0">She</td>
+                        <td tabindex="0">is</td>
+                        <td tabindex="0">Ella es / está</td>
                     </tr>
                     <tr>
-                        <td>It</td>
-                        <td>is</td>
-                        <td>Él / Ella es / está</td>
+                        <td tabindex="0">It</td>
+                        <td tabindex="0">is</td>
+                        <td tabindex="0">Él / Ella es / está</td>
                     </tr>
                     <tr>
-                        <td>We</td>
-                        <td>are</td>
-                        <td>Nosotros somos / estamos</td>
+                        <td tabindex="0">We</td>
+                        <td tabindex="0">are</td>
+                        <td tabindex="0">Nosotros somos / estamos</td>
                     </tr>
                     <tr>
-                        <td>You</td>
-                        <td>are</td>
-                        <td>Ustedes son / están</td>
+                        <td tabindex="0">You</td>
+                        <td tabindex="0">are</td>
+                        <td tabindex="0">Ustedes son / están</td>
                     </tr>
                     <tr>
-                        <td>They</td>
-                        <td>are</td>
-                        <td>Ellos son / están</td>
+                        <td tabindex="0">They</td>
+                        <td tabindex="0">are</td>
+                        <td tabindex="0">Ellos son / están</td>
                     </tr>
                     </tbody>
 

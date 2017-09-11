@@ -91,6 +91,7 @@
 				unset($email);
 				unset($pass);
                 unset($dis);
+                header("Location: index.php");
 			} else {
 				$errTyp = "danger";
 				$errMSG = "Ha ocurrido un error, intente de nuevo en un momento!";	
@@ -169,15 +170,37 @@
             </div>
             
             <div class="form-group">
-                <label for="discapacidad">Discapacidad</label>
-            	<div class="input-group">
+                <label for="sDiscapacidad">Discapacidad</label>
+                <div class="input-group">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-eye-open"></span></span>
-            	<input type="text" id="discapacidad" name="dis" class="form-control" maxlength="40" value="<?php echo $dis ?>" aria-label="Discapacidad" tabindex="0"/>
+
+                    <select name="discapacidad" id="sDiscapacidad" class="form-control form-control-lg" aria-labelledby="sDiscapacidad" tabindex="0">
+                        <option >Seleccione una discapacidad</option>
+                        <option value="CEGUERA">Ceguera</option>
+                        <option value="DALTONISMO">Daltonísmo</option>
+                        <option value="VISIONBORROSA">Visión Borrosa</option>
+                        <option value="sinDiscapacidad">Ninguna</option>
+                    </select>
                 </div>
-                <span class="text-danger"><?php echo $disError; ?></span>
             </div>
-            
+
+            <script type="text/javascript">
+                var select = document.getElementById('sDiscapacidad');
+                select.addEventListener('change',
+                    function(){
+                        var selectedOption = this.options[select.selectedIndex];
+                        console.log(selectedOption.value + ': ' + selectedOption.text);
+                        document.getElementById('idDisJs').value = selectedOption.value;
+                    });
+            </script>
+
             <div class="form-group">
+                <input type="hidden" id="idDisJs" name="dis" class="form-control" value="<?php echo $dis ?>"/>
+                <span class="text-danger"><?php echo $disError; ?>
+            </div>
+
+            <div class="form-group">
+
             	<hr />
             </div>
             
