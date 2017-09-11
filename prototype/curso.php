@@ -25,6 +25,12 @@ $userRow=mysql_fetch_array($res);
     <?php
     if ((adapter($userRow['userDis'])=='ceguera')){
         $discapacidad=adapter($userRow['userDis']);
+    }else if ((adapter($userRow['userDis'])=='daltonismo')){
+        $discapacidad=adapter($userRow['userDis']);
+    }else if ((adapter($userRow['userDis'])=='visionBorrosa')){
+        $discapacidad=adapter($userRow['userDis']);
+    }else {
+        $discapacidad=adapter($userRow['userDis']);
     }
     ?>
 
@@ -43,7 +49,7 @@ $userRow=mysql_fetch_array($res);
         <img id="banner" src="assets/img/inglesFuturo.jpg" alt="Hombre y mujer ejecutivos a lado de un texto que dice: El inglés te conecta con el mundo" height="250">
     </div>
     <nav class="navbar navbar-light bg-faded">
-        <div class="container">
+        <div id="barraMenu" class="container">
             <div class="navbar-header">
                 <a id="m1" class="navbar-brand" href="home.php">Menu</a>
             </div>

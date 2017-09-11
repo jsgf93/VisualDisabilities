@@ -9,14 +9,20 @@
 	width: 100%;
 }
 
+#barraMenu{
+	font-size: 20px;
+}
 
 #dina4 {
     width: 210mm;
     height: 365mm;
     padding: 20px 60px;
-    border: 1px solid red;
-    background: #fff;
+    border: 2px solid blue;
+    background: #E3F2FD;
+	color: #1565C0;
     margin: 10px auto;
+	
+	font-family: 'Abril Fatface', cursive;
 }
 
 *{

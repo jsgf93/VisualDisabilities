@@ -25,7 +25,14 @@
     <?php
     if ((adapter($userRow['userDis'])=='ceguera')){
         $discapacidad=adapter($userRow['userDis']);
+    }else if ((adapter($userRow['userDis'])=='daltonismo')){
+        $discapacidad=adapter($userRow['userDis']);
+    }else if ((adapter($userRow['userDis'])=='visionBorrosa')){
+        $discapacidad=adapter($userRow['userDis']);
+    }else {
+        $discapacidad=adapter($userRow['userDis']);
     }
+
     ?>
 
     <link rel="stylesheet" href="Patrones/<?php echo $discapacidad?>.css" type="text/css" />
@@ -40,9 +47,9 @@
 </div>
 	<nav class="navbar navbar-light bg-faded">
 
-        <div class="container">
+        <div id="barraMenu" class="container">
 
-        <div class="navbar-header">
+        <div  class="navbar-header">
             <a id="m1" class="navbar-brand" href="home.php">Menu</a>
         </div>
           <div id="navbar" class="navbar-collapse collapse">

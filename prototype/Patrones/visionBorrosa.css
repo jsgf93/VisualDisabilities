@@ -2,7 +2,7 @@
 
 
 #visionBorrosa {
-    font-size: 35px;
+    font-size: 28px;
     background-color: white;
     color: black;
     font-family: 'Archivo Black', sans-serif;
@@ -10,17 +10,26 @@
 	
 }
 
+#barraMenu{
+	font-size: 20px;
+	color: #c4319d;
+}
+
 #banner{
 	width: 100%;
 }
 
 #dina4 {
-    width: 210mm;
-    height: 365mm;
+	 
+    width: 310mm;
+    height: 555mm;
     padding: 20px 60px;
-    border: 3px solid red;
-    background: #fff;
+    border: 6px solid #c4319d;
+    background: #ffeff9;
     margin: 10px auto;
+	color: black;
+	font-size: 38px;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 *{

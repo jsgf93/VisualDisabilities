@@ -25,11 +25,17 @@ $userRow=mysql_fetch_array($res);?>
         <!-- load of different kind of pattern-->
 
         <?php
-            if ((adapter($userRow['userDis'])=='ceguera')){
-                    $discapacidad=adapter($userRow['userDis']);
-            }
-        ?>
+        if ((adapter($userRow['userDis'])=='ceguera')){
+            $discapacidad=adapter($userRow['userDis']);
+        }else if ((adapter($userRow['userDis'])=='daltonismo')){
+            $discapacidad=adapter($userRow['userDis']);
+        }else if ((adapter($userRow['userDis'])=='visionBorrosa')){
+            $discapacidad=adapter($userRow['userDis']);
+        }else {
+            $discapacidad=adapter($userRow['userDis']);
+        }
 
+        ?>
         <link rel="stylesheet" href="Patrones/<?php echo $discapacidad?>.css" type="text/css" />
 
 
@@ -39,12 +45,12 @@ $userRow=mysql_fetch_array($res);?>
 
         <title>Bienvenido - <?php echo $userRow['userDis']; ?></title>
     </head>
-    <body id="">
+    <body id="<?php echo adapter($userRow['userDis']);?>">
     <div >
         <img id="banner" src="assets/img/inglesFuturo.jpg" alt="Hombre y mujer ejecutivos a lado de un texto que dice: El inglés te conecta con el mundo" height="250">
     </div>
     <nav class="navbar navbar-light bg-faded">
-        <div class="container" >
+        <div id="barraMenu" class="container" >
             <div class="navbar-header">
                 <a id="m1" class="navbar-brand" href="home.php" tabindex="0">Menu</a>
             </div>

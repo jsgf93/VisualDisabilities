@@ -14,6 +14,10 @@
 	padding-top:50px;
 }
 
+#banner{
+	width: 100%;
+}
+
 #concepto{
 	clear: both;
 	height: 100px;
