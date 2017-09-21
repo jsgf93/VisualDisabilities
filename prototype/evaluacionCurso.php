@@ -223,7 +223,7 @@ $userRow=mysql_fetch_array($res);?>
                         <?php
                         //Si se pulsa el botón de enviar
                         if (isset($_POST['enviar'])) {
-                            if (isset($_POST['primeraPregunta']) && $_POST['primeraPregunta'] == 'rc1'){
+                            if ($_POST['primeraPregunta'] == 'rc1'){
                                 $respuesta1='Pregunta 1: respuesta correcta';
                                 $valor1=20;
                             }
@@ -231,7 +231,7 @@ $userRow=mysql_fetch_array($res);?>
                                 $respuesta1='Pregunta 1: respuesta incorrecta, la respuesta correcta es : Estados relativamente permanentes o transitorios.';
                                 $valor1=0;
                             }
-                            if (isset($_POST['segundaPregunta']) && $_POST['segundaPregunta'] == 'rc2'){
+                            if ($_POST['segundaPregunta'] == 'rc2'){
                                 $respuesta2='Pregunta 2: respuesta correcta';
                                 $valor2=20;
                             }
@@ -239,7 +239,7 @@ $userRow=mysql_fetch_array($res);?>
                                 $respuesta2='Pregunta 2: respuesta incorrecta, la respuesta correcta es : To be + Sujeto (pronombre personal) + oración.';
                                 $valor2=0;
                             }
-                            if (isset($_POST['terceraPregunta']) && $_POST['terceraPregunta'] == 'rc3'){
+                            if ($_POST['terceraPregunta'] == 'rc3'){
                                 $respuesta3='Pregunta 3: respuesta correcta';
                                 $valor3 = 20;
                             }
@@ -247,7 +247,7 @@ $userRow=mysql_fetch_array($res);?>
                                 $respuesta3='Pregunta 3: respuesta incorrecta, la respuesta correcta es : I am a student.';
                                 $valor3=0;
                             }
-                            if (isset($_POST['cuartaPregunta']) && $_POST['cuartaPregunta'] == 'rc4'){
+                            if ($_POST['cuartaPregunta'] == 'rc4'){
                                 $respuesta4='Pregunta 4: respuesta correcta';
                                 $valor4 = 20;
                             }
@@ -255,7 +255,7 @@ $userRow=mysql_fetch_array($res);?>
                                 $respuesta4 = 'Pregunta 4: respuesta incorrecta, la respuesta correcta es : Sujeto (pronombre personal)+ To be + not + oración';
                                 $valor4 = 0;
                             }
-                            if (isset($_POST['quitaPregunta']) && $_POST['quitaPregunta'] == 'rc5'){
+                            if ($_POST['quitaPregunta'] == 'rc5'){
                                 $respuesta5='Pregunta 5: respuesta correcta';
                                 $valor5 = 20;
                             }
