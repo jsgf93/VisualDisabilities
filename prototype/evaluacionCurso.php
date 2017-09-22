@@ -172,19 +172,19 @@ $userRow=mysql_fetch_array($res);?>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label" >
                                     <input class="form-check-input" type="radio" name="cuartaPregunta" id="gridRadios10" value="ri41" >
-                                    To be + not + Sujeto (pronombre personal) + oración
+                                    To be + not + Sujeto (pronombre personal) + oración.
                                 </label>
                             </div>
                             <div class="form-check" tabindex="0">
                             <label class="form-check-label" >
                                 <input class="form-check-input" type="radio" name="cuartaPregunta" id="gridRadios10" value="rc4">
-                                    Sujeto (pronombre personal)+ To be + not + oración
+                                    Sujeto (pronombre personal)+ To be + not + oración.
                                 </label>
                             </div>
                             <div class="form-check" tabindex="0">
                                 <label class="form-check-label">
                                     <input class="form-check-input" type="radio" name="cuartaPregunta" id="gridRadios12" value="ri42" >
-                                    Oración + not + to be + sujeto (pronombre personal)
+                                    Oración + not + to be + sujeto (pronombre personal).
                                 </label>
                             </div>
                         </div>
