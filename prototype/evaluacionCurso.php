@@ -242,7 +242,7 @@ $userRow=mysql_fetch_array($res);?>
                             </div>
                             <div class="modal-footer">
                                 <p id="total" tabindex="0"></p>
-                                <button type="button" class="btn btn-default" data-dismiss="modal" id="btnCerrar">Cerrar</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="btnCerrar" tabindex="0">Cerrar</button>
 
                             </div>
                         </div>
