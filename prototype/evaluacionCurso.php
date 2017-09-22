@@ -219,91 +219,123 @@ $userRow=mysql_fetch_array($res);?>
 
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <input type="submit" name="enviar" value="Enviar" class="btn btn-primary" tabindex="0"/>
-                        <?php
-                        //Si se pulsa el botón de enviar
-                        if (isset($_POST['enviar'])) {
-                            if ($_POST['primeraPregunta'] == 'rc1'){
-                                $respuesta1='Pregunta 1: respuesta correcta';
-                                $valor1=20;
-                            }
-                            else{
-                                $respuesta1='Pregunta 1: respuesta incorrecta, la respuesta correcta es : Estados relativamente permanentes o transitorios.';
-                                $valor1=0;
-                            }
-                            if ($_POST['segundaPregunta'] == 'rc2'){
-                                $respuesta2='Pregunta 2: respuesta correcta';
-                                $valor2=20;
-                            }
-                            else{
-                                $respuesta2='Pregunta 2: respuesta incorrecta, la respuesta correcta es : To be + Sujeto (pronombre personal) + oración.';
-                                $valor2=0;
-                            }
-                            if ($_POST['terceraPregunta'] == 'rc3'){
-                                $respuesta3='Pregunta 3: respuesta correcta';
-                                $valor3 = 20;
-                            }
-                            else{
-                                $respuesta3='Pregunta 3: respuesta incorrecta, la respuesta correcta es : I am a student.';
-                                $valor3=0;
-                            }
-                            if ($_POST['cuartaPregunta'] == 'rc4'){
-                                $respuesta4='Pregunta 4: respuesta correcta';
-                                $valor4 = 20;
-                            }
-                            else {
-                                $respuesta4 = 'Pregunta 4: respuesta incorrecta, la respuesta correcta es : Sujeto (pronombre personal)+ To be + not + oración';
-                                $valor4 = 0;
-                            }
-                            if ($_POST['quitaPregunta'] == 'rc5'){
-                                $respuesta5='Pregunta 5: respuesta correcta';
-                                $valor5 = 20;
-                            }
-                            else {
-                                $respuesta5 = 'Pregunta 5: respuesta incorrecta, la respuesta correcta es : I am not a student';
-                                $valor5 = 0;
-                            }
-                            $total=$valor1+$valor2+$valor3+$valor4+$valor5;
-                                echo '<script type="text/javascript">
-                                    $(window).load(function(){
-                                        $(\'#myModal\').modal(\'show\');
-                                    });
-                                    </script>';
-                        }
-                        ?>
+                       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="btnEnviar" tabindex="0">Finalizar</button>
                     </div>
                 </div>
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" role="dialog">
                     <div class="modal-dialog">
+
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" tabindex="0">&times;</button>
-                                <h4 id="r1" class="modal-title" tabindex="0">Resultado de la evaluación</h4>
+                                <button type="button" class="close" data-dismiss="modal" tabindex="0" id="btnCerrarX">x</button>
+
+                                <h4 class="modal-title" tabindex="0">Resultados de la evaluación</h4>
                             </div>
                             <div class="modal-body">
-                                <div tabindex="0" ><?php echo $respuesta1; ?></div>
-                                <div tabindex="0" ><?php echo $respuesta2; ?></div>
-                                <div tabindex="0" ><?php echo $respuesta3; ?></div>
-                                <div tabindex="0" ><?php echo $respuesta4; ?></div>
-                                <div tabindex="0" ><?php echo $respuesta5; ?></div>
-                                <div class="form-group">
-                                    <hr />
-                                </div>
-                                <div tabindex="0">Calificación:<?php echo $total; ?>/100</div>
+                                <p id="respuesta1" tabindex="0"></p>
+                                <p id="respuesta2" tabindex="0"></p>
+                                <p id="respuesta3" tabindex="0"></p>
+                                <p id="respuesta4" tabindex="0"></p>
+                                <p id="respuesta5" tabindex="0"></p>
                             </div>
                             <div class="modal-footer">
-                                <button tabindex="0" type="button"  class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                <p id="total" tabindex="0"></p>
+                                <a href="javascript:location.reload()" tabindex="0">Cerrar</a>
+
                             </div>
                         </div>
+
                     </div>
                 </div>
             </form>
+
+            <script>
+                //variables
+                var score1="0",score2="0",score3="0",score4="0",score5="0";
+                var nota1=0,nota2=0,nota3=0,nota4=0,nota5=0,total=0;
+                //valores del documento
+                $(document).ready(function()
+                {
+                    $('input:radio').keypress(function(e){
+                        if((e.keyCode ? e.keyCode : e.which) == 13){
+                            $(this).trigger('click');
+                        }
+                    });
+                    $("input[name=primeraPregunta]").change(function () {
+                        score1=$(this).val();
+                    });
+                    $("input[name=segundaPregunta]").change(function () {
+                        score2=$(this).val();
+                    });
+                    $("input[name=terceraPregunta]").change(function () {
+                        score3=$(this).val();
+                    });
+                    $("input[name=cuartaPregunta]").change(function () {
+                        score4=$(this).val();
+                    });
+                    $("input[name=quitaPregunta]").change(function () {
+                        score5=$(this).val();
+                    });
+                });
+
+                //informacion del modal
+                $("#btnEnviar").click(function() {
+                    if(score1==='rc1')
+                    {
+                        nota1=20;
+                        document.getElementById("respuesta1").innerHTML = 'Respuesta 1 correcta.';
+                    }else{
+                        nota1=0;
+                        document.getElementById("respuesta1").innerHTML = 'Respuesta 1 incorrecta. La respuesta es: Estados relativamente permanentes o transitorios.' ;
+                    }
+                    if(score2==='rc2')
+                    {
+                        nota2=20;
+                        document.getElementById("respuesta2").innerHTML = 'Respuesta 2 correcta.';
+                    }else{
+                        nota2=0;
+                        document.getElementById("respuesta2").innerHTML = 'Respuesta 2 incorrecta. La respuesta es: To be + Sujeto (pronombre personal) + oración.' ;
+                    }
+                    if(score3==='rc3')
+                    {
+                        nota3=20;
+                        document.getElementById("respuesta3").innerHTML = 'Respuesta 3 correcta.';
+                    }else{
+                        nota3=0;
+                        document.getElementById("respuesta3").innerHTML = 'Respuesta 3 incorrecta. La respuesta es: I am a student.' ;
+                    }
+                    if(score4==='rc4')
+                    {
+                        nota4=20;
+                        document.getElementById("respuesta4").innerHTML = 'Respuesta 4 correcta.';
+                    }else{
+                        nota4=0;
+                        document.getElementById("respuesta4").innerHTML = 'Respuesta 4 incorrecta. La respuesta es: Sujeto (pronombre personal)+ To be + not + oración.' ;
+                    }
+                    if(score5==='rc5')
+                    {
+                        nota5=20;
+                        document.getElementById("respuesta5").innerHTML = 'Respuesta 5 correcta.';
+                    }else{
+                        nota5=0;
+                        document.getElementById("respuesta5").innerHTML = 'Respuesta 5 incorrecta. La respuesta es: I am not a student.' ;
+                    }
+
+                    total=nota1+nota2+nota3+nota4+nota5;
+                    document.getElementById("total").innerHTML ='Total = '+ total+'/100';
+                });
+
+                $('#btnCerrar').click(function() {
+                    location.reload();
+                });
+                $('#btnCerrarX').click(function() {
+                    location.reload();
+                });
+            </script>
         </div>
     </div>
-
-
     </body>
     </html>
 <?php ob_end_flush(); ?>
