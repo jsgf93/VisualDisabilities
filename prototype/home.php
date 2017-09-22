@@ -55,7 +55,7 @@
           <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                   <li ><a href="curso.php">Primera lección</a></li>
-                  <li><a href="evaluacionCurso.php">Evualuación de la lección</a></li>
+                  <li><a href="evaluacionCurso.php">Evaluación de la lección</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
 
